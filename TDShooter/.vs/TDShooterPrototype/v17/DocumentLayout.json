@@ -1,0 +1,152 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|i:\\projects\\unity\\tdsprototype\\tdshooterprototype\\assets\\scripts\\inventorycomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventorycomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|i:\\projects\\unity\\tdsprototype\\tdshooterprototype\\assets\\scripts\\handsiksettingcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\handsiksettingcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\assets\\scripts\\weaponcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\assets\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\assets\\scripts\\laserpointercomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\laserpointercomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\assets\\scripts\\animationcontrollercomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animationcontrollercomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\assets\\scripts\\playercomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\assets\\scripts\\movementcontrollercomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{571CF6F4-6D2D-AF03-EE42-109BCD631B48}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementcontrollercomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HandsIKSettingComponent.cs",
+              "DocumentMoniker": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\HandsIKSettingComponent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HandsIKSettingComponent.cs",
+              "ToolTip": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\HandsIKSettingComponent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HandsIKSettingComponent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T14:37:34.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InventoryComponent.cs",
+              "DocumentMoniker": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\InventoryComponent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InventoryComponent.cs",
+              "ToolTip": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\InventoryComponent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InventoryComponent.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:14:27.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\InputManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InputManager.cs",
+              "ToolTip": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\InputManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InputManager.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:25:01.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LaserPointerComponent.cs",
+              "DocumentMoniker": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\LaserPointerComponent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LaserPointerComponent.cs",
+              "ToolTip": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\LaserPointerComponent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LaserPointerComponent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T12:25:14.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AnimationControllerComponent.cs",
+              "DocumentMoniker": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\AnimationControllerComponent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AnimationControllerComponent.cs",
+              "ToolTip": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\AnimationControllerComponent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AnimationControllerComponent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:21:29.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MovementControllerComponent.cs",
+              "DocumentMoniker": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\MovementControllerComponent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MovementControllerComponent.cs",
+              "ToolTip": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\MovementControllerComponent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MovementControllerComponent.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAQwCwAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:20:34.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerComponent.cs",
+              "DocumentMoniker": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\PlayerComponent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerComponent.cs",
+              "ToolTip": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\PlayerComponent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerComponent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:17:24.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeaponComponent.cs",
+              "DocumentMoniker": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\WeaponComponent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\WeaponComponent.cs",
+              "ToolTip": "I:\\Projects\\Unity\\TDSPrototype\\TDShooterPrototype\\Assets\\Scripts\\WeaponComponent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\WeaponComponent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T09:15:30.275Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

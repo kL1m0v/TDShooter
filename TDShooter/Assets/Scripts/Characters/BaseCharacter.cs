@@ -12,7 +12,7 @@ namespace TopDownShooter
         {
             get { return _healthPoints; }
             private set 
-            { 
+            {
                 _healthPoints = value; 
                 if (_healthPoints < 0)
                 {
@@ -23,10 +23,8 @@ namespace TopDownShooter
 
         public virtual void TakeDamage(int damage)
         {
-            Debug.Log(_healthPoints);
-            _healthPoints -= damage;
-            Debug.Log(_healthPoints);
-            if (_healthPoints == 0)
+            HealthPoints -= damage;
+            if (HealthPoints == 0)
             {
                 Die();
             }

@@ -8,7 +8,6 @@ public class ZombieAttackCollisionDetector : MonoBehaviour
         if (other.gameObject.TryGetComponent<PlayerManager>(out PlayerManager player))
         {
             player.TakeDamage(1);
-            Debug.Log("Player Take Damage");
         }
     }
 }

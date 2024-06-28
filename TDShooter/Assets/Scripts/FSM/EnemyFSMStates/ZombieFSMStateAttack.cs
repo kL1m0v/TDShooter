@@ -5,10 +5,9 @@ namespace TopDownShooter
 {
     public class ZombieFSMStateAttack : EnemyFSMStateBase
     {
-        protected EnemyBase _enemyBase;
         protected NavMeshAgent _navMeshAgent;
 
-        public ZombieFSMStateAttack(FSM fsm, Animator animator, EnemyBase enemyBase, NavMeshAgent navMeshAgent) : base(fsm, animator)
+        public ZombieFSMStateAttack(FSM fsm, Animator animator, EnemyBase enemyBase, NavMeshAgent navMeshAgent, AudioSource audioSource) : base(fsm, animator, enemyBase, audioSource)
         {
             _enemyBase = enemyBase;
             _navMeshAgent = navMeshAgent;

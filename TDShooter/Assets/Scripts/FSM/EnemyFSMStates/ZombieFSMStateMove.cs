@@ -4,12 +4,10 @@ using UnityEngine.AI;
 
 public class ZombieFSMStateMove : EnemyFSMStateBase
 {
-    protected EnemyBase _enemyBase;
     protected NavMeshAgent _navMeshAgent;
 
-    public ZombieFSMStateMove(FSM fsm, Animator animator, EnemyBase enemyBase, NavMeshAgent navMeshAgent) : base(fsm, animator) 
+    public ZombieFSMStateMove(FSM fsm, Animator animator, EnemyBase enemyBase, NavMeshAgent navMeshAgent, AudioSource audioSource) : base(fsm, animator, enemyBase, audioSource) 
     {
-        _enemyBase = enemyBase;
         _navMeshAgent = navMeshAgent;
     }
      

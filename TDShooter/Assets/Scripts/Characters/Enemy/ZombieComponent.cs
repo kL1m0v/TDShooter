@@ -11,18 +11,17 @@ namespace TopDownShooter
         private FSM _fsm;
         [SerializeField]
         private Collider _handCollider;
-        private EnemyAttackController _enemyAttackController;
         
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _animator = GetComponent<Animator>();  
             _fsm = new();
-            _enemyAttackController = new(_handCollider);
-            _fsm.AddState(new ZombieFSMStateIdle(_fsm, _animator, this, _navMeshAgent));
-            _fsm.AddState(new ZombieFSMStateMove(_fsm, _animator, this, _navMeshAgent));
-            _fsm.AddState(new ZombieFSMStateAttack(_fsm, _animator, this, _navMeshAgent));
-            _fsm.AddState(new ZombieFSMStateDeath(_fsm, _animator));
+            _fsm.AddState(new ZombieFSMStateIdle(_fsm, _animator, this, _navMeshAgent, _audioSource));
+            _fsm.AddState(new ZombieFSMStateMove(_fsm, _animator, this, _navMeshAgent, _audioSource));
+            _fsm.AddState(new ZombieFSMStateAttack(_fsm, _animator, this, _navMeshAgent, _audioSource));
+            _fsm.AddState(new ZombieFSMStateDeath(_fsm, _animator, this, _audioSource));
 
             _fsm.SetState<ZombieFSMStateIdle>();
         }

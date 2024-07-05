@@ -6,7 +6,8 @@ namespace TopDownShooter
 {
     public class WeaponComponent : MonoBehaviour
     {
-        private static ObjectPool _poolOfBullets;
+        [Inject (Id = "PlayerBullPool")]
+        private ObjectPool _poolOfBullets;
         private const string _path = "BulletPrefab";
         private GameObject _bulletPref;
 
@@ -39,7 +40,6 @@ namespace TopDownShooter
         {
             _audioSource = GetComponent<AudioSource>();
             _bulletPref = Resources.Load<GameObject>(_path);
-            _poolOfBullets = new(_bulletPref, 1);
             _constDelayBetweenShots = _delayBetweenShots;
         }
 

@@ -22,18 +22,18 @@ namespace TopDownShooter
         {
             _lifeTime = _constLifeTime;
             StartCoroutine(Disable());
-            _trailRenderer.enabled = true;
         }
 
         private IEnumerator Disable()
         {
+            _trailRenderer.emitting = true;
             while (_lifeTime > 0) 
             {
                 transform.position += Time.deltaTime * _speed * transform.forward;
                 _lifeTime -= Time.deltaTime;
                 yield return null;
             }
-            _trailRenderer.enabled = false;
+            _trailRenderer.emitting = false;
             gameObject.SetActive(false);
         }
 

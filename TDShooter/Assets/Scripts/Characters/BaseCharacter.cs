@@ -5,7 +5,7 @@ namespace TopDownShooter
     public abstract class BaseCharacter : MonoBehaviour, IDamageable
     {
         [SerializeField]
-        [Range(1, 100)]
+        [Range(1, 500)]
         private int _healthPoints;
         
         public int HealthPoints

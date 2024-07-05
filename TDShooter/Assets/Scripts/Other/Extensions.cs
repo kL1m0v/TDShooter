@@ -15,7 +15,7 @@ public static class Extensions
 public enum NumStateAnimation
 {
     Idle,
-    Walk,
+    Move,
     Attack,
     Death
 }

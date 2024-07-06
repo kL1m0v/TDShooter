@@ -25,6 +25,7 @@ namespace TopDownShooter
         {
             Move(movementSpeed);
             Rotate();
+            UseGravity();
         }
 
         private void Move(float movementSpeed)
@@ -46,6 +47,16 @@ namespace TopDownShooter
             direction.y = 0;
             Quaternion rotation = Quaternion.LookRotation(direction);
             _transform.rotation = rotation;
+        }
+
+        private void UseGravity()
+        {
+            Ray ray = new(_transform.position, Vector3.down);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (hit.distance > 0)
+                    _transform.position -= new Vector3(0, 4f, 0) * Time.deltaTime;
+            }
         }
     }
 }

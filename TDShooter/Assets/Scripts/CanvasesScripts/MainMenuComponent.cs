@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
@@ -8,8 +7,6 @@ namespace TopDownShooter
 {
     public class MainMenuComponent : MonoBehaviour
     {
-        [SerializeField]
-        private GameManager _gameManager;
         [Inject]
         private SceneLoader _sceneLoader;
         [SerializeField]
@@ -42,13 +39,15 @@ namespace TopDownShooter
         {
             _newGameButton.onClick.AddListener(() =>
             {
-                _gameManager.LoadNewGame();
+                _mainCanvas.enabled = false;
+                _loadCanvas.enabled = true;
+                UnityEngine.SceneManagement.SceneManager.LoadScene(1);
             }
             );
 
             _loadButton.onClick.AddListener(() => 
-            { 
-
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(GameManager.GetIDNextScene());
             });
 
             _playerUpdateButton.onClick.AddListener(() => 

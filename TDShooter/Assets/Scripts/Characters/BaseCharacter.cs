@@ -6,12 +6,12 @@ namespace TopDownShooter
     {
         [SerializeField]
         [Range(1, 500)]
-        private int _healthPoints;
+        protected int _healthPoints;
         
         public int HealthPoints
         {
             get { return _healthPoints; }
-            private set 
+            protected set 
             {
                 _healthPoints = value; 
                 if (_healthPoints < 0)

@@ -25,6 +25,7 @@ namespace TopDownShooter
         private float _delayBetweenShots;
         private float _constDelayBetweenShots;
         private bool _canShoot;
+        public bool IsAvailable;
 
         public Transform RightHandGrip { get => _RightHandGrip; }
         public Transform LeftHandGrip { get => _LeftHandGrip; }

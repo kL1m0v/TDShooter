@@ -9,13 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 35d70503a341c654a88899a63eb9cd11
   - enabled: 1
-    path: Assets/Scenes/LoadScene.unity
-    guid: 0873ef43bbaf4da4fa4a25b14943e64d
-  - enabled: 1
     path: Assets/Scenes/WarehouseesScene.unity
     guid: 96e53e28d17ad5d40a45a65472ed12f5
   - enabled: 1
-    path: Assets/ChurchScene/Scenes/ChurchScene.unity
+    path: Assets/Scenes/ChurchScene.unity
     guid: d8f213b28287d8b4dab42cf4a34f94e5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1e267c998124b9e4e98bbd19343cc6ff, type: 2}

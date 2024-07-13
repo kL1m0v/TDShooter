@@ -21,10 +21,29 @@ namespace TopDownShooter
         private PlayerAnimationController _animationController;
         private ShootingManager _shootingManager;
 
-        [SerializeField, Range(0f, 100f)]
+        public static event Action<int> OnHealthChanged;
+        public static event Action<int> OnArmorChanged;
+
+        [SerializeField]
         private float _movementSpeed;
+        private int _armorPoints;
+        private int _money;
 
         public static Vector3 PlayerPosition { get; private set; }
+        public float MovementSpeed { get => _movementSpeed; private set => _movementSpeed = value; }
+        public int ArmorPoints 
+        { 
+            get => _armorPoints; 
+            private set 
+            {
+                _armorPoints = value;
+                if (_armorPoints < 0)
+                {
+                    _armorPoints = 0;
+                }
+            } 
+        }
+        public int Money { get => _money; private set => _money = value; }
 
         private void Start()
         {
@@ -49,7 +68,7 @@ namespace TopDownShooter
 
         private void Update()
         {
-            _movementController.UpdateMovement(_movementSpeed);
+            _movementController.UpdateMovement(MovementSpeed);
             _animationController.PlayRunAnimation();
             _shootingManager.Update();
             PlayerPosition = transform.position;
@@ -57,8 +76,36 @@ namespace TopDownShooter
 
         public override void TakeDamage(int damage)
         {
-            base.TakeDamage(damage);
+            if (ArmorPoints >= damage)
+            {
+                ArmorPoints -= damage;
+                OnArmorChanged?.Invoke(ArmorPoints);
+            }
+            else if (ArmorPoints > 0 && ArmorPoints < damage)
+            {
+                int residualDamage = damage - ArmorPoints;
+                ArmorPoints = residualDamage;
+                OnArmorChanged?.Invoke(ArmorPoints);
+                base.TakeDamage(residualDamage);
+                OnHealthChanged?.Invoke(HealthPoints);
+            }
+
+            else
+            {
+                base.TakeDamage(damage);
+                OnHealthChanged?.Invoke(HealthPoints);
+            }
             _audioSource.Play();
         }
+
+        public static void CustomizePlayer(PlayerConfig config)
+        {
+            _instance.HealthPoints = config.Health;
+            _instance.ArmorPoints = config.Armor;
+            _instance.Money = config.Money;
+            _instance._inventoryComponent.Weapons[0].IsAvailable = config.IsHasPistol;
+            _instance._inventoryComponent.Weapons[0].IsAvailable = config.IsHasAssaultRifle;
+        }
+
     }
 }

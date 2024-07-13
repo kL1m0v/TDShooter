@@ -46,6 +46,7 @@ namespace TopDownShooter
             _configModel.Money.Value = _playerConfig.Money;
             _configModel.IsHasPistol.Value = _playerConfig.IsHasPistol;
             _configModel.IsHasAssaultRifle.Value = _playerConfig.IsHasAssaultRifle;
+            Debug.Log(_playerConfig.Health);
         }
 
         public void SaveToFileData()
@@ -55,17 +56,18 @@ namespace TopDownShooter
             File.WriteAllText(_filePathData, toJson);
         }
 
-        public void LoadFromFileData()
+        public SaveData LoadFromFileData()
         {
             if (!File.Exists(_filePathData))
             {
-                return;
-                //todo загружать дефолтное значение
+                SaveData save = new SaveData();
+                _saveData = save;
+                return _saveData;
             }
 
             string fromJson = File.ReadAllText(_filePathData);
 
-            _saveData = JsonUtility.FromJson<SaveData>(fromJson);
+            return _saveData = JsonUtility.FromJson<SaveData>(fromJson);
         }
     }
 }

@@ -14,27 +14,27 @@ namespace TopDownShooter
         private HandsIKSettingComponent _HandsIKsettings;
 
         public WeaponComponent CurrentWeapon { get => _currentWeapon; }
+        public WeaponComponent[] Weapons { get => _weapons; private set => _weapons = value; }
 
         private void Start()
         {
             _HandsIKsettings = GetComponent<HandsIKSettingComponent>();
-            foreach (var weapon in _weapons) 
+            foreach (var weapon in Weapons) 
             {
                 DisableWeapon(weapon);
             }
-            _currentWeapon = _weapons[0];
+            _currentWeapon = Weapons[0];
             EnableWeapon(_currentWeapon);
             _inputManager.ChooseWeapon1Action.performed += callBackContext => SelectWeapon(0);
             _inputManager.ChooseWeapon2Action.performed += callBackContext => SelectWeapon(1);
-            _inputManager.ChooseWeapon3Action.performed += callBackContext => SelectWeapon(2);
         }
 
         private void SelectWeapon(int num)
         {
-            if (_weapons.Length <= num || _currentWeapon == _weapons[num]) return;
+            if (Weapons.Length <= num || _currentWeapon == Weapons[num] || !Weapons[num].IsAvailable) return;
             DisableWeapon(_currentWeapon);
-            EnableWeapon(_weapons[num]);
-            _currentWeapon = _weapons[num];
+            EnableWeapon(Weapons[num]);
+            _currentWeapon = Weapons[num];
             
         }
 
@@ -47,6 +47,12 @@ namespace TopDownShooter
         private void DisableWeapon(WeaponComponent weapon)
         {
             weapon.gameObject.SetActive(false);
+        }
+
+        private void OnDisable()
+        {
+            _inputManager.ChooseWeapon1Action.performed -= callBackContext => SelectWeapon(0);
+            _inputManager.ChooseWeapon2Action.performed -= callBackContext => SelectWeapon(1);
         }
     }
 }

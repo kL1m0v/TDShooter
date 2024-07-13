@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 043f9b35a8a2b354b99d1452e03d018f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 043f9b35a8a2b354b99d1452e03d018f, type: 3}
       propertyPath: m_Avatar
@@ -104,7 +104,51 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 043f9b35a8a2b354b99d1452e03d018f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2357631943771783460}
+    - targetCorrespondingSourceObject: {fileID: 7547691395978512338, guid: 043f9b35a8a2b354b99d1452e03d018f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1467779743035262051}
+    - targetCorrespondingSourceObject: {fileID: 7547691395978512338, guid: 043f9b35a8a2b354b99d1452e03d018f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8435850277876849636}
   m_SourcePrefab: {fileID: 100100000, guid: 043f9b35a8a2b354b99d1452e03d018f, type: 3}
+--- !u!1 &124962432908475915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7547691395978512338, guid: 043f9b35a8a2b354b99d1452e03d018f, type: 3}
+  m_PrefabInstance: {fileID: 7567522912082950617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1467779743035262051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124962432908475915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c218ad35b30f7a040ac84adc99f40215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &8435850277876849636
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124962432908475915}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.17
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7333078656662127752 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 043f9b35a8a2b354b99d1452e03d018f, type: 3}
@@ -123,12 +167,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthPoints: 100
-  _damage: 0
-  _detectDistance: 6
+  _damage: 10
+  _detectDistance: 8
   _sounds:
   - _name: Death
     clip: {fileID: 8300000, guid: 9e550579dbc16f445a214a739ee4888d, type: 3}
-  _handCollider: {fileID: 0}
+  _handCollider: {fileID: 8435850277876849636}
 --- !u!143 &8473743692821160409
 CharacterController:
   m_ObjectHideFlags: 0

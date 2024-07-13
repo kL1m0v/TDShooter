@@ -15,7 +15,6 @@ namespace TopDownShooter
 
         private InputAction _chooseWeapon1Action;
         private InputAction _chooseWeapon2Action;
-        private InputAction _chooseWeapon3Action;
 
         private Camera _mainCamera;
 
@@ -25,7 +24,6 @@ namespace TopDownShooter
 
         public InputAction ChooseWeapon1Action { get => _chooseWeapon1Action; }
         public InputAction ChooseWeapon2Action { get => _chooseWeapon2Action; }
-        public InputAction ChooseWeapon3Action { get => _chooseWeapon3Action; }
 
         public void Initialize()
         {
@@ -41,7 +39,6 @@ namespace TopDownShooter
             _fireAction = _controls.FindAction("Fire");
             _chooseWeapon1Action = _controls.FindAction("ChooseWeapon1");
             _chooseWeapon2Action = _controls.FindAction("ChooseWeapon2");
-            _chooseWeapon3Action = _controls.FindAction("ChooseWeapon3");
         }
 
         private void EnableActions()
@@ -51,7 +48,6 @@ namespace TopDownShooter
             _fireAction.Enable();
             _chooseWeapon1Action.Enable();
             _chooseWeapon2Action.Enable();
-            _chooseWeapon3Action.Enable();
         }
 
         public RaycastHit GetRaycastHit()
@@ -68,7 +64,6 @@ namespace TopDownShooter
             _fireAction.Disable();
             _chooseWeapon1Action.Disable();
             _chooseWeapon2Action.Disable();
-            _chooseWeapon3Action.Disable();
         }
     }
 }

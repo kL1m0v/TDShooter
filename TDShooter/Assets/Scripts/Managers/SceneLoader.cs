@@ -1,20 +1,26 @@
-using System.Collections;
-using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 namespace TopDownShooter
 {
+
+    //todo удалить класс?
     public class SceneLoader
     {
-        public IEnumerator LoadSceneAsync(int sceneId) 
+        private List<string> _sceneNames = new();
+
+        public List<string> SceneNames { get { return _sceneNames; } }
+
+        private void LoadSceneNames()
         {
-            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneId);
-            asyncOperation.allowSceneActivation = false;
-            while (!asyncOperation.isDone) 
+            int sceneCount = SceneManager.sceneCountInBuildSettings;
+            for (int i = 0; i < sceneCount; i++)
             {
-                yield return null;
+                string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+                string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+                _sceneNames.Add(sceneName);
             }
-            asyncOperation.allowSceneActivation = true;
         }
     }
 }

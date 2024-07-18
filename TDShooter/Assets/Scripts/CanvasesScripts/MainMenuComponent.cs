@@ -18,7 +18,7 @@ namespace TopDownShooter
         [SerializeField]
         private Button _resetButton;
         [SerializeField]
-        private Button _loadButton;
+        private Button _playButton;
         [SerializeField]
         private Button _playerUpdateButton;
         [SerializeField]
@@ -45,7 +45,7 @@ namespace TopDownShooter
             }
             );
 
-            _loadButton.onClick.AddListener(() => 
+            _playButton.onClick.AddListener(() => 
             {
                 _loadCanvas.enabled = true;
                 SceneManager.LoadScene(GameManager.GetIDNextScene());
@@ -78,7 +78,7 @@ namespace TopDownShooter
         private void OnDisable()
         {
             _resetButton.onClick.RemoveAllListeners();
-            _loadButton.onClick.RemoveAllListeners();
+            _playButton.onClick.RemoveAllListeners();
             _backToMainMenuButton.onClick.RemoveAllListeners();
             _exitButton.onClick.RemoveAllListeners();
         }

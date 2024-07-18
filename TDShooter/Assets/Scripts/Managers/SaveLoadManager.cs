@@ -78,6 +78,7 @@ namespace TopDownShooter
             {
                 SaveData save = new SaveData();
                 SaveData = save;
+                SaveData.Reset();
                 return SaveData;
             }
 

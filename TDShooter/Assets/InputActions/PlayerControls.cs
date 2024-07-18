@@ -82,6 +82,15 @@ namespace TopDownShooter
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e941c5e-43d3-441d-8039-5bce9b694d50"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -194,6 +203,17 @@ namespace TopDownShooter
                     ""action"": ""ChooseWeapon3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0614d36b-e4f1-439a-8ed7-bdd470eeb151"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +228,7 @@ namespace TopDownShooter
             m_Player_ChooseWeapon1 = m_Player.FindAction("ChooseWeapon1", throwIfNotFound: true);
             m_Player_ChooseWeapon2 = m_Player.FindAction("ChooseWeapon2", throwIfNotFound: true);
             m_Player_ChooseWeapon3 = m_Player.FindAction("ChooseWeapon3", throwIfNotFound: true);
+            m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -275,6 +296,7 @@ namespace TopDownShooter
         private readonly InputAction m_Player_ChooseWeapon1;
         private readonly InputAction m_Player_ChooseWeapon2;
         private readonly InputAction m_Player_ChooseWeapon3;
+        private readonly InputAction m_Player_Pause;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -285,6 +307,7 @@ namespace TopDownShooter
             public InputAction @ChooseWeapon1 => m_Wrapper.m_Player_ChooseWeapon1;
             public InputAction @ChooseWeapon2 => m_Wrapper.m_Player_ChooseWeapon2;
             public InputAction @ChooseWeapon3 => m_Wrapper.m_Player_ChooseWeapon3;
+            public InputAction @Pause => m_Wrapper.m_Player_Pause;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -312,6 +335,9 @@ namespace TopDownShooter
                 @ChooseWeapon3.started += instance.OnChooseWeapon3;
                 @ChooseWeapon3.performed += instance.OnChooseWeapon3;
                 @ChooseWeapon3.canceled += instance.OnChooseWeapon3;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -334,6 +360,9 @@ namespace TopDownShooter
                 @ChooseWeapon3.started -= instance.OnChooseWeapon3;
                 @ChooseWeapon3.performed -= instance.OnChooseWeapon3;
                 @ChooseWeapon3.canceled -= instance.OnChooseWeapon3;
+                @Pause.started -= instance.OnPause;
+                @Pause.performed -= instance.OnPause;
+                @Pause.canceled -= instance.OnPause;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -359,6 +388,7 @@ namespace TopDownShooter
             void OnChooseWeapon1(InputAction.CallbackContext context);
             void OnChooseWeapon2(InputAction.CallbackContext context);
             void OnChooseWeapon3(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
         }
     }
 }

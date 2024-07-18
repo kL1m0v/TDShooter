@@ -37,9 +37,8 @@ namespace TopDownShooter
         {
             SaveData save = _instance._saveLoadManager.LoadFromFileData();
             int IDScene = save.CurrentSceneID;
-            int NextSceneID = ++IDScene;
-            Scene NextScene = SceneManager.GetSceneByBuildIndex(NextSceneID);
-            if (NextScene != null)
+            int NextSceneID = IDScene + 1;
+            if (NextSceneID < SceneManager.sceneCountInBuildSettings)
             {
                 return NextSceneID;
             }

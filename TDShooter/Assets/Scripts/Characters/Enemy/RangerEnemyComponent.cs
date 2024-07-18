@@ -5,17 +5,14 @@ namespace TopDownShooter
 {
     public class RangerEnemyComponent : EnemyBase
     {
-        protected static ObjectPool _projectilesPool;
-        [SerializeField]
-        protected GameObject _projectile;
+        [Inject(Id = "ProjectilePool")]
+        private ObjectPool _projectilesPool;
         [SerializeField]
         private Transform _muzzle;
 
         protected override void Start()
         {
             base.Start();
-            if( _projectilesPool == null )
-                _projectilesPool = new(_projectile,2);
             SetInitialState();
         }
 

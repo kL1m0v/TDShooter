@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,6 +20,8 @@ namespace TopDownShooter
         protected NavMeshAgent _navMeshAgent;
         protected Animator _animator;
         protected FSM _fsm;
+
+        public event Action OnEnemyDied;
 
         public float DetectDistance => _detectDistance;
 
@@ -45,6 +49,24 @@ namespace TopDownShooter
             _fsm.AddState(new EnemyFSMStateDeath(_fsm, _animator, this, _audioSource, _navMeshAgent));
             _fsm.SetState<EnemyFSMStateIdle>();
         }
-        
+
+        public override void Die()
+        {
+            OnEnemyDied?.Invoke();
+            StartCoroutine(DisableWithDelay());
+            OnEnemyDied = null;
+        }
+
+        private void OnDisable()
+        {
+            OnEnemyDied = null;
+        }
+
+        private IEnumerator DisableWithDelay()
+        {
+            yield return new WaitForSeconds(3);
+            gameObject.SetActive(false);
+        }
+
     }
 }

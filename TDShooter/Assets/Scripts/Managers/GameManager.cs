@@ -7,12 +7,12 @@ namespace TopDownShooter
     public class GameManager : MonoBehaviour
     {
         [Inject]
-        private SceneLoader _sceneLoader;
-        [Inject]
         private SaveLoadManager _saveLoadManager;
         private static GameManager _instance;
+        [SerializeField]
+        private Texture2D _cursorTexture;
 
-        public SaveLoadManager SaveLoadManager { get => _saveLoadManager; }
+        public static SaveLoadManager SaveLoadManager { get => _instance._saveLoadManager; }
 
         private void Start()
         {
@@ -25,32 +25,34 @@ namespace TopDownShooter
                 Destroy(gameObject);
             }
             SaveLoadManager.LoadFromFileData();
+            AdjustCursor();
         }
 
-        public void LoadNewGame()
-        {
-            SceneManager.LoadScene(1);
-        }
-        
-        
         private void OnApplicationQuit()
         {
-            SaveLoadManager.SaveToFilePlayerConfig();
+            SaveLoadManager.SaveConfigToFile();
         }
 
         public static int GetIDNextScene()
         {
-            SaveData save = _instance.SaveLoadManager.LoadFromFileData();
+            SaveData save = _instance._saveLoadManager.LoadFromFileData();
             int IDScene = save.CurrentSceneID;
-            if(IDScene >= SceneManager.sceneCount)
+            int NextSceneID = ++IDScene;
+            Scene NextScene = SceneManager.GetSceneByBuildIndex(NextSceneID);
+            if (NextScene != null)
             {
-                return IDScene;
+                return NextSceneID;
             }
             else
             {
-                return ++IDScene;
+                return IDScene;
             }
         }
 
+        private void AdjustCursor()
+        {
+            Vector2 hotSpot = new(_cursorTexture.width/2, _cursorTexture.height/2);
+            Cursor.SetCursor(_cursorTexture, hotSpot, CursorMode.Auto);
+        }
     }
 }

@@ -430,7 +430,8 @@ MonoBehaviour:
   _LeftHandGrip: {fileID: 419454314660649756}
   _muzzle: {fileID: 1600705682392642103}
   _damage: 10
-  _delayBetweenShots: 0.7
+  _delayBetweenShots: 0.55
+  IsAvailable: 0
 --- !u!82 &2700614165497197242
 AudioSource:
   m_ObjectHideFlags: 0

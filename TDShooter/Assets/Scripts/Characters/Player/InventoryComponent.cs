@@ -16,7 +16,7 @@ namespace TopDownShooter
         public WeaponComponent CurrentWeapon { get => _currentWeapon; }
         public WeaponComponent[] Weapons { get => _weapons; private set => _weapons = value; }
 
-        private void Start()
+        private void Awake()
         {
             _HandsIKsettings = GetComponent<HandsIKSettingComponent>();
             foreach (var weapon in Weapons) 

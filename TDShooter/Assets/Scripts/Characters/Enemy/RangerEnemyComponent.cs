@@ -5,8 +5,8 @@ namespace TopDownShooter
 {
     public class RangerEnemyComponent : EnemyBase
     {
-        [Inject(Id = "DemonProjectilePool")]
-        private ObjectPool _projectilesPool;
+        protected static ObjectPool _projectilesPool;
+        [SerializeField]
         protected GameObject _projectile;
         [SerializeField]
         private Transform _muzzle;
@@ -14,6 +14,8 @@ namespace TopDownShooter
         protected override void Start()
         {
             base.Start();
+            if( _projectilesPool == null )
+                _projectilesPool = new(_projectile,2);
             SetInitialState();
         }
 
@@ -29,6 +31,7 @@ namespace TopDownShooter
 
         public override void Die()
         {
+            base.Die();
             _fsm.SetState<EnemyFSMStateDeath>();
         }
 
@@ -39,7 +42,6 @@ namespace TopDownShooter
             if (projectile.TryGetComponent(out ProjectileComponent projectileComponent))
             {
                 projectileComponent.Damage = Damage;
-
             }
         }
     }

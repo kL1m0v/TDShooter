@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
@@ -7,8 +8,6 @@ namespace TopDownShooter
 {
     public class MainMenuComponent : MonoBehaviour
     {
-        [Inject]
-        private SceneLoader _sceneLoader;
         [SerializeField]
         private Canvas _mainCanvas;
         [SerializeField]
@@ -17,7 +16,7 @@ namespace TopDownShooter
         private Canvas _playerSettingsCanvas;
 
         [SerializeField]
-        private Button _newGameButton;
+        private Button _resetButton;
         [SerializeField]
         private Button _loadButton;
         [SerializeField]
@@ -37,17 +36,19 @@ namespace TopDownShooter
 
         private void OnEnable()
         {
-            _newGameButton.onClick.AddListener(() =>
+            _resetButton.onClick.AddListener(() =>
             {
-                _mainCanvas.enabled = false;
-                _loadCanvas.enabled = true;
-                UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+                GameManager.SaveLoadManager.PlayerConfig.Reset();
+                GameManager.SaveLoadManager.SaveConfigToFile();
+                GameManager.SaveLoadManager.SaveData.Reset();
+                GameManager.SaveLoadManager.SaveToFileData();
             }
             );
 
             _loadButton.onClick.AddListener(() => 
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene(GameManager.GetIDNextScene());
+                _loadCanvas.enabled = true;
+                SceneManager.LoadScene(GameManager.GetIDNextScene());
             });
 
             _playerUpdateButton.onClick.AddListener(() => 
@@ -64,6 +65,8 @@ namespace TopDownShooter
 
             _exitButton.onClick.AddListener(() => 
             {
+                GameManager.SaveLoadManager.SaveConfigToFile();
+                GameManager.SaveLoadManager.SaveToFileData();
 #if UNITY_EDITOR
                 EditorApplication.isPlaying = false;
 #else 
@@ -74,7 +77,7 @@ namespace TopDownShooter
 
         private void OnDisable()
         {
-            _newGameButton.onClick.RemoveAllListeners();
+            _resetButton.onClick.RemoveAllListeners();
             _loadButton.onClick.RemoveAllListeners();
             _backToMainMenuButton.onClick.RemoveAllListeners();
             _exitButton.onClick.RemoveAllListeners();

@@ -67,7 +67,7 @@ namespace TopDownShooter
             _pistolButton.enabled = !_viewModel.IsHasPistolView.Value;
             _assaultRiffleButton.enabled = !_viewModel.IsHasAssaultRifleView.Value;
 
-            _saveLoadManager.LoadFromFilePlayerConfig();
+            _saveLoadManager.LoadConfigFromFile();
         }
 
 

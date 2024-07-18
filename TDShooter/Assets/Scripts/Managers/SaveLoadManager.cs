@@ -7,7 +7,7 @@ namespace TopDownShooter
     public class SaveLoadManager
     {
         [Inject]
-        private PlayerConfigModel _configModel;
+        private PlayerConfigModel _playerConfigModel;
         [Inject]
         private PlayerConfig _playerConfig;
         [Inject]
@@ -16,42 +16,58 @@ namespace TopDownShooter
         private string _filePathPlayerConfig = Application.persistentDataPath + "/config.json";
         private string _filePathData = Application.persistentDataPath + "/data.json";
 
-        public void SaveToFilePlayerConfig()
-        {
-            _playerConfig.Health = _configModel.Health.Value;
-            _playerConfig.Armor = _configModel. Armor.Value;
-            _playerConfig.Money = _configModel.Money.Value;
-            _playerConfig.IsHasPistol = _configModel.IsHasPistol.Value;
-            _playerConfig.IsHasAssaultRifle = _configModel.IsHasAssaultRifle.Value;
+        public PlayerConfig PlayerConfig { get => _playerConfig; set => _playerConfig = value; }
+        public SaveData SaveData { get => _saveData; set => _saveData = value; }
+        public PlayerConfigModel PlayerConfigModel { get => _playerConfigModel; set => _playerConfigModel = value; }
 
-            string toJson = JsonUtility.ToJson(_playerConfig, true);
+        public void SaveConfigToFile()
+        {
+            SaveFromPlayerConfigToModel();
+
+            string toJson = JsonUtility.ToJson(PlayerConfig, true);
 
             File.WriteAllText(_filePathPlayerConfig, toJson);
         }
 
-        public void LoadFromFilePlayerConfig()
+        public void LoadConfigFromFile()
         {
             if (!File.Exists(_filePathPlayerConfig))
             {
+                PlayerConfig playerConfig = new();
+                playerConfig.Reset();
+                PlayerConfig = playerConfig;
+                SaveFromPlayerConfigToModel();
                 return;
-                //todo загружать дефолтное значение
             }
 
             string fromJson = File.ReadAllText(_filePathPlayerConfig);
             
-            _playerConfig = JsonUtility.FromJson<PlayerConfig>(fromJson);
+            PlayerConfig = JsonUtility.FromJson<PlayerConfig>(fromJson);
 
-            _configModel.Health.Value = _playerConfig.Health;
-            _configModel.Armor.Value = _playerConfig.Armor;
-            _configModel.Money.Value = _playerConfig.Money;
-            _configModel.IsHasPistol.Value = _playerConfig.IsHasPistol;
-            _configModel.IsHasAssaultRifle.Value = _playerConfig.IsHasAssaultRifle;
-            Debug.Log(_playerConfig.Health);
+            SaveFromPlayerConfigToModel();
+        }
+
+        public void SaveFromPlayerConfigToModel()
+        {
+            PlayerConfigModel.Health.Value = PlayerConfig.Health;
+            PlayerConfigModel.Armor.Value = PlayerConfig.Armor;
+            PlayerConfigModel.Money.Value = PlayerConfig.Money;
+            PlayerConfigModel.IsHasPistol.Value = PlayerConfig.IsHasPistol;
+            PlayerConfigModel.IsHasAssaultRifle.Value = PlayerConfig.IsHasAssaultRifle;
+        }
+
+        public void SaveFromModelToPlayerConfig()
+        {
+            PlayerConfig.Health = PlayerConfigModel.Health.Value;
+            PlayerConfig.Armor = PlayerConfigModel.Armor.Value;
+            PlayerConfig.Money = PlayerConfigModel.Money.Value;
+            PlayerConfig.IsHasPistol = PlayerConfigModel.IsHasPistol.Value;
+            PlayerConfig.IsHasAssaultRifle = PlayerConfigModel.IsHasAssaultRifle.Value;
         }
 
         public void SaveToFileData()
         {
-            string toJson = JsonUtility.ToJson(_saveData, true);
+            string toJson = JsonUtility.ToJson(SaveData, true);
 
             File.WriteAllText(_filePathData, toJson);
         }
@@ -61,13 +77,13 @@ namespace TopDownShooter
             if (!File.Exists(_filePathData))
             {
                 SaveData save = new SaveData();
-                _saveData = save;
-                return _saveData;
+                SaveData = save;
+                return SaveData;
             }
 
             string fromJson = File.ReadAllText(_filePathData);
 
-            return _saveData = JsonUtility.FromJson<SaveData>(fromJson);
+            return SaveData = JsonUtility.FromJson<SaveData>(fromJson);
         }
     }
 }

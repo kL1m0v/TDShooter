@@ -8,7 +8,7 @@ namespace TopDownShooter
         [Range(1, 500)]
         protected int _healthPoints;
         
-        public int HealthPoints
+        public int CurrentHealthPoints
         {
             get { return _healthPoints; }
             protected set 
@@ -23,8 +23,8 @@ namespace TopDownShooter
 
         public virtual void TakeDamage(int damage)
         {
-            HealthPoints -= damage;
-            if (HealthPoints == 0)
+            CurrentHealthPoints -= damage;
+            if (CurrentHealthPoints == 0)
             {
                 Die();
             }

@@ -55,7 +55,7 @@ namespace TopDownShooter
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 if (hit.distance > 0)
-                    _transform.position -= new Vector3(0, 4f, 0) * Time.deltaTime;
+                    _transform.position -= new Vector3(0, 1f, 0) * Time.deltaTime;
             }
         }
     }

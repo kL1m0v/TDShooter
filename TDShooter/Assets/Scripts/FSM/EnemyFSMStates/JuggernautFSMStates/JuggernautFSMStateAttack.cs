@@ -16,8 +16,11 @@ public class JuggernautFSMStateAttack : EnemyFSMStateBase
             _fsm.SetState<JuggernautFSMStateMove>();
             return;
         }
-        _animator.SetInteger("NumState", (int)NumStateAnimation.Attack);
+
+        int randomAttack = Random.Range(0, 2);
+        if (randomAttack == 0)
+            _animator.SetInteger("NumState", (int)NumStateAnimation.Attack);
+        else
+            _animator.SetInteger("NumState", (int)NumStateAnimation.SpetialAttack);
     }
-
-
 }

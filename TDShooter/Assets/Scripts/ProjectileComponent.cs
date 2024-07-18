@@ -41,8 +41,8 @@ namespace TopDownShooter
             if(other.TryGetComponent<PlayerManager>(out PlayerManager player))
             {
                 player.TakeDamage(Damage);
+                gameObject.SetActive(false);
             }
-            gameObject.SetActive(false);
         }
     }
 }

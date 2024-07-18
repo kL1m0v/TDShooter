@@ -8,8 +8,6 @@ namespace TopDownShooter
     {
         [Inject (Id = "PlayerBullPool")]
         private ObjectPool _poolOfBullets;
-        private const string _path = "BulletPrefab";
-        private GameObject _bulletPref;
 
         private AudioSource _audioSource;
 
@@ -40,7 +38,6 @@ namespace TopDownShooter
         private void Start()
         {
             _audioSource = GetComponent<AudioSource>();
-            _bulletPref = Resources.Load<GameObject>(_path);
             _constDelayBetweenShots = _delayBetweenShots;
         }
 

@@ -17,5 +17,6 @@ public enum NumStateAnimation
     Idle,
     Move,
     Attack,
-    Death
+    Death,
+    SpetialAttack
 }

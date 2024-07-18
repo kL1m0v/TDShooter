@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7008927890959847992
 Transform:
   m_ObjectHideFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8843384236709489007}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.4, y: 0, z: -1.041}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -76,8 +76,8 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
-  m_PreviewTimeScale: 1
+  m_Time: 0.01
+  m_PreviewTimeScale: 0.1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.2
@@ -85,17 +85,17 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.22727272
-        inSlope: -0.36967722
-        outSlope: -0.36967722
+        time: 0.90385556
+        value: 0
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.19083749
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
-        time: 0.8590263
-        value: 0
+        time: 1
+        value: 0.06618185
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083ff44206204c64dbb45638b9b7e225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 100
+  _speed: 70
   _lifeTime: 0.2
 --- !u!136 &3032840582457285570
 CapsuleCollider:

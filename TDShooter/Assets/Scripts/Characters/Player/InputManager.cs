@@ -7,7 +7,6 @@ namespace TopDownShooter
 {
     public class InputManager : IInitializable, IDisposable
     {
-        [Inject]
         private PlayerControls _controls;
         private InputAction _moveAction;
         private InputAction _rotateAction;
@@ -27,6 +26,7 @@ namespace TopDownShooter
 
         public void Initialize()
         {
+            _controls = new();
             AssignActions();
             EnableActions();
             _mainCamera = Camera.main;
@@ -59,11 +59,11 @@ namespace TopDownShooter
 
         public void Dispose()
         {
-            _moveAction.Disable();
-            _rotateAction.Disable();
-            _fireAction.Disable();
-            _chooseWeapon1Action.Disable();
-            _chooseWeapon2Action.Disable();
+            _moveAction?.Disable();
+            _rotateAction?.Disable();
+            _fireAction?.Disable();
+            _chooseWeapon1Action?.Disable();
+            _chooseWeapon2Action?.Disable();
         }
     }
 }

@@ -102,6 +102,7 @@ namespace TopDownShooter
             _model.Money.Value = MoneyView.Value;
             _model.IsHasPistol.Value = IsHasPistolView.Value;
             _model.IsHasAssaultRifle.Value = IsHasAssaultRifleView.Value;
+            GameManager.SaveLoadManager.SaveFromModelToPlayerConfig();
         }
 
         public void OnResetButtonClicked()

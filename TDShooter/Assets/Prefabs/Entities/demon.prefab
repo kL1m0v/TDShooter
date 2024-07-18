@@ -410,11 +410,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c3d73ba06daaeef40b556c623d33fc02, type: 3}
       propertyPath: m_Name
-      value: demon 1
+      value: demon
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c3d73ba06daaeef40b556c623d33fc02, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1089023562516253819, guid: c3d73ba06daaeef40b556c623d33fc02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -846,11 +846,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthPoints: 100
-  _damage: 15
+  _damage: 5
   _detectDistance: 12
   _sounds:
   - _name: Death
     clip: {fileID: 8300000, guid: 31811e34e64f7974c8c02f47ce195bb7, type: 3}
+  _projectile: {fileID: 1776975442474771767, guid: 0620427269b516a4b886cda9d868f23e, type: 3}
   _muzzle: {fileID: 3606227912681218142}
 --- !u!136 &2715199131754177388
 CapsuleCollider:

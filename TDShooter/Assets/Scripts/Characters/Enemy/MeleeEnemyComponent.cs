@@ -36,6 +36,7 @@ namespace TopDownShooter
 
         public override void Die()
         {
+            base.Die();
             _fsm.SetState<EnemyFSMStateDeath>();
         }
     }

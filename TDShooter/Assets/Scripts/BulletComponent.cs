@@ -39,7 +39,7 @@ namespace TopDownShooter
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("OnTriggerEnter");
+            gameObject.SetActive(false);
         }
     }
 }

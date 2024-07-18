@@ -14,5 +14,14 @@ namespace TopDownShooter
         public int Money;
         public bool IsHasPistol;
         public bool IsHasAssaultRifle;
+
+        public void Reset()
+        {
+            Health = 100;
+            Armor = 0;
+            Money = 0;
+            IsHasPistol = true;
+            IsHasAssaultRifle = false;
+        }
     }
 }

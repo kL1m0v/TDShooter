@@ -3,12 +3,10 @@ using Zenject;
 
 namespace TopDownShooter
 {
-    [RequireComponent (typeof(Rigidbody))]
-    public sealed class FlyingRangerEnemyComponent: RangerEnemyComponent
+    [RequireComponent(typeof(Rigidbody))]
+    public class FlyingRangerEnemyComponent : RangerEnemyComponent
     {
         private Rigidbody _rigidbody;
-        [Inject(Id = "WatcherProjectilePool")]
-        private ObjectPool _projectilesPool;
 
         protected override void Start()
         {
@@ -28,6 +26,7 @@ namespace TopDownShooter
 
         public override void Die()
         {
+            base.Die();
             _fsm.SetState<FlyingRangerEnemyFSMStateDeath>();
         }
     }

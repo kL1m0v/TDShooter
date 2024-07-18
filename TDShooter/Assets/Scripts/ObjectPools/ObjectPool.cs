@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 namespace TopDownShooter
 {
     public class ObjectPool
     {
+        private DiContainer _container;
         private GameObject _prefab;
         private List<GameObject> _stack;
 

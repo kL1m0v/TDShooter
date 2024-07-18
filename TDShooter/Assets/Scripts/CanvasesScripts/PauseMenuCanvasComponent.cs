@@ -16,13 +16,25 @@ namespace TopDownShooter
         private Button _exitButton;
         private Canvas _canvas;
 
+        private void OnEnable()
+        {
+            _inputManager.PauseAction.performed += PauseAction_performed;
+            _resumeButton.onClick.AddListener(Continue);
+            _resumeButton.onClick.AddListener(() => Debug.Log("Click"));
+            _exitButton.onClick.AddListener(GoToMainMenu);
+        }
+
         private void Start()
         {
-            _resumeButton.onClick.AddListener(Continue);
-            _exitButton.onClick.AddListener(GoToMainMenu);
             _canvas = GetComponent<Canvas>();
             _canvas.enabled = false;
-            _inputManager.PauseAction.performed += PauseAction_performed;
+        }
+
+        private void OnDestroy()
+        {
+            _inputManager.PauseAction.performed -= PauseAction_performed;
+            _resumeButton.onClick.RemoveAllListeners();
+            _exitButton.onClick.RemoveAllListeners();
         }
 
         private void PauseAction_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
